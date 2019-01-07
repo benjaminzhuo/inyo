@@ -1,0 +1,11 @@
+{
+  "name": "inyo",
+  "version": "1.0.0",
+  "description": "Web app to help you track self improvement",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben",
+  "license": "ISC"
+}
