@@ -4,7 +4,23 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
+//Database stored in config file
+const config = require('./config/database')
 
+//Middleware functions are functions that have access to the req and res objects. 
+
+mongoose.connect(config.database);
+
+//Check for connection and log
+mongoose.connection.on('connected', () => {
+	console.log('connected to db ' + config.database);
+});
+
+mongoose.connection.on('error', () => {
+	console.log('db error ' + err);
+});
+
+//Bringing in express
 const app = express();
 const port = 3000;
 

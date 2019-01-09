@@ -1,5 +1,8 @@
 //All of user's routes
+//Routing refers to how an application endooints resonds to client requests
 
+//The routing methods speicify a callback function. With multiple callback functions, you need next as an argument to 
+//the callback function and then call next() within the body of the function to hand off control to the next callback.
 const express = require('express');
 const router = express.Router();
 
@@ -10,7 +13,7 @@ router.get('/register', (req, res, next) => {
     res.send('Register');
 });
 
-router.get('/authenticate', (req, res, next) => {
+router.post('/authenticate', (req, res, next) => {
     res.send('authenticate');
 });
 
