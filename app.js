@@ -7,11 +7,12 @@ const mongoose = require('mongoose');
 
 const app = express();
 const port = 3000;
-const users = require('./routes/users')
+
+const users = require('./routes/users');
 
 //Using cors middleware allows any domain to access
 //We are gonna have authentication to disable routes if correct token not sent
-app.use(cors);
+app.use(cors());
 
 //This routes URLs like localhost:3000/users/xxx to route to routes/users folder
 app.use('/users', users); 
@@ -23,6 +24,7 @@ app.get('/', (req, res) =>{
 
 //Body-parser middleware allows grabbing data from forms easily
 app.use(bodyParser.json());
+
 app.listen(port, () => {
     console.log('Server started on port 3000');
 });
