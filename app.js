@@ -14,6 +14,10 @@ const users = require('./routes/users');
 //We are gonna have authentication to disable routes if correct token not sent
 app.use(cors());
 
+//Set static folder 
+//more info https://expressjs.com/en/starter/static-files.html
+app.use(express.static(path.join(__dirname, 'public')));
+
 //This routes URLs like localhost:3000/users/xxx to route to routes/users folder
 app.use('/users', users); 
 
