@@ -37,7 +37,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(cors());
 
+//Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
+require('./config/passport')(passport);
 //This routes URLs like localhost:3000/users/xxx to route to routes/users folder
 app.use('/users', users); 
 
